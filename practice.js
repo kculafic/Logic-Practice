@@ -56,9 +56,6 @@ function iqTest(numbers){
   for (i=0; i < newNums.length; i++) {
      sum += newNums[i];
   }
-  console.log('sum = ' + sum);
-  console.log('arrLength = ' + newNums.length)
-
   // sum = odd
   if (sum % 2 !== 0) {
     for (j=0; j < newNums.length; j++) {
@@ -67,7 +64,6 @@ function iqTest(numbers){
         for (k=0; k < newNums.length; k++) {
           // length = even
           if (newNums[k] % 2 === 0) {
-          console.log ('trend is odd')
           return (k + 1)
           }
         }
@@ -75,7 +71,6 @@ function iqTest(numbers){
         // trend = even
         for (m=0; m < newNums.length; m++) {
           if (newNums[m] % 2 !== 0) {
-          console.log ('trend is even')
           return (m+1)
           }
         }
@@ -84,9 +79,39 @@ function iqTest(numbers){
   } else if (sum % 2 === 0) {
     for (n=0; n < newNums.length; n++) {
       if (newNums[n] % 2 === 0) {
-        console.log ('trend is odd')
         return (n+1)
       }
     }
   }
 }
+
+// ******************* reverseInteger *************************
+// Reverse digits of an integer.
+//
+// Example1: x = 123, return 321
+// Example2: x = -123, return -321
+
+function reverse(x) {
+  var newArr = [];
+  var origArr = x.toString().split('')
+
+  if (origArr[0] !== '-') {
+    if (origArr[0] == 0) {
+      return 0
+    } else {
+      for (i=(origArr.length - 1); i >= 0; i--) {
+        newArr.push(origArr[i]);
+      }
+      var join = newArr.join('');
+      var s = "00000000" + join;
+      return s.substr(s.length - join.length)
+    }
+  } else if (origArr[0] == '-') {
+    newArr.push('-');
+    for (i=(origArr.length - 1); i > 0; i--) {
+      newArr.push(origArr[i]);
+    }
+    var join = newArr.join('');
+    return parseInt(join)
+  }
+};
