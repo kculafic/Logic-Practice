@@ -129,3 +129,29 @@ function arithmetic(a, b, operator){
     return a / b
   }
 }
+
+// ****************** Vodka Festival (6kyu) ****************
+//capacity format:
+//-number can be a float.
+//-only small letters.
+// var shots = ["500ml","2l","1.4l"];
+// vodkaConsumption(shots)  --> must return "3900ml" or "4l"
+
+function vodkaConsumption(shots){
+  let shotStatsArr = [];
+  let sum = 0;
+  for (i=0; i < shots.length; i++) {
+    if(shots[i].includes('ml') === true) {
+      let placeholder = parseFloat(shots[i].substring(0, shots[i].length-2))
+      shotStatsArr.push(placeholder);
+    } else {
+      let literHolder = (parseFloat(shots[i].substring(0, shots[i].length-1)) * 1000)
+      shotStatsArr.push(literHolder);
+    }
+  }
+  for (j=0; j < shotStatsArr.length; j++) {
+    sum += shotStatsArr[j];
+  }
+  let conversion = Math.round(sum / 1000);
+  return (sum.toString() + 'ml');
+}
