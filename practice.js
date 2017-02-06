@@ -155,3 +155,70 @@ function vodkaConsumption(shots){
   let conversion = Math.round(sum / 1000);
   return (sum.toString() + 'ml');
 }
+
+
+// ******************** Array Helpers - 6kyu ***************
+// This kata is designed to test your ability to extend the functionality
+// of built-in javascript classes. In this case, we want you to extend
+// the built-in Array class with the following methods: square(), cube(),
+// average(), sum(), even() and odd().
+
+Array.prototype.square = function () {
+  var input = this;
+  let newArr = [];
+  for (i=0; i < input.length; i++) {
+   newArr.push(input[i]*input[i])
+  } return newArr
+}
+
+Array.prototype.cube = function () {
+  var input = this;
+  let newArr = [];
+  for (i=0; i < input.length; i++) {
+   newArr.push(input[i]*input[i]*input[i])
+  } return newArr
+}
+
+Array.prototype.average = function () {
+  var input = this;
+  let sum = 0;
+  if (input === []) {
+    return NaN
+  } else {
+    for (i=0; i < input.length; i++) {
+      sum += input[i]
+    }
+      return (sum / input.length)
+  }
+}
+
+Array.prototype.sum = function () {
+  var input = this;
+  let sum = 0;
+  for (i=0; i < input.length; i++) {
+    sum += input[i]
+  }
+  return sum
+}
+
+Array.prototype.even = function () {
+  var input = this;
+  let evenArr = [];
+  for (i=0; i < input.length; i++) {
+    if (input[i] % 2 === 0) {
+      evenArr.push(input[i])
+    }
+  }
+  return evenArr
+}
+
+Array.prototype.odd = function () {
+  var input = this;
+  let oddArr = []
+  for (i=0; i < input.length; i++) {
+    if (input[i] % 2 !== 0 ) {
+      oddArr.push(input[i])
+    }
+  }
+  return oddArr
+}
