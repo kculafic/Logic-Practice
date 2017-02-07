@@ -222,3 +222,24 @@ Array.prototype.odd = function () {
   }
   return oddArr
 }
+
+
+// ***************** Vowel Count - 7kyu ***************
+function getCount(str) {
+  var vowelsCount = 0;
+  var newArr = str.split('');
+  for (i=0; i < newArr.length; i++) {
+    if (newArr[i] === 'a') {
+      (vowelsCount += 1)
+    } else if (newArr[i] === 'e') {
+      (vowelsCount += 1)
+    } else if (newArr[i] === 'i') {
+      (vowelsCount += 1)
+    } else if (newArr[i] === 'o') {
+      (vowelsCount += 1)
+    } else if (newArr[i] === 'u') {
+      (vowelsCount += 1)
+    }
+  }
+  return vowelsCount;
+}
