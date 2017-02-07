@@ -253,3 +253,33 @@ const factorial = n => {
     return f[n];
   return f[n] = factorial(n-1) * n;
 };
+
+// ************** Pre-Challenge Credit Card Question *******
+// Return the credit card with the largest sum
+
+function preChallenge(nums) {
+  var newArr = [];
+  var sumArr = [];
+  let sum = 0 ;
+
+  for (i=0; i < nums.length; i++) {
+    newArr = nums[i].split('')
+    parseInt(newArr);
+    for (j=0; j < newArr.length; j++) {
+      if (newArr[j] !== '-') {
+        sum += parseInt(newArr[j])
+      }
+    } sumArr.push(sum);
+  }
+  var largest = 0;
+  var index = 0;
+  for (k=0; k <= sumArr.length; k++) {
+    if (sumArr[k] > largest) {
+     largest = sumArr[k];
+     index = k;
+    }
+  }
+  return nums[index];
+}
+
+// var creditCardNumbers = ['5865-2600-5889-0555', '4779-598666-3666', '4252-278553-7978' ,'4556-4242-9283-2260'];
