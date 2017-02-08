@@ -283,3 +283,31 @@ function preChallenge(nums) {
 }
 
 // var creditCardNumbers = ['5865-2600-5889-0555', '4779-598666-3666', '4252-278553-7978' ,'4556-4242-9283-2260'];
+
+// ****************** URL - 5 kyu ****************
+
+function domainName(url){
+  var w = 'www.'
+  var index = url.indexOf('.');
+  var dash = url.indexOf('/');
+  var sub = '';
+
+  if ( url.includes(w) )  {
+    for ((i = index + 1); i < url.length; i++) {
+     sub += url[i]
+    }
+    var indexAgain = sub.indexOf('.');
+    var name = sub.substring(0, indexAgain);
+    return name
+  } else if ( url.includes('//') )  {
+    for ((j = dash + 2); j < url.length; j++) {
+     sub += url[j]
+    }
+    var anotherIndex = sub.indexOf('.');
+    var name = sub.substring(0, anotherIndex);
+    return name
+  } else {
+    var name = url.substring(0, index)
+    return name
+  }
+}
