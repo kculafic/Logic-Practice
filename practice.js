@@ -344,4 +344,27 @@ function check(input) {
   } else {
     return false
   }
-} 
+}
+
+// ********** Count the Smiley Faces - 6kyu ****************
+// Given an array (arr) as an argument complete the function countSmileys
+// that should return the total number of smiling faces.
+//
+// Rules for a smiling face:
+// -Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+// -A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+// -Every smiling face must have a smiling mouth that should be marked with either ) or D.
+// Valid smiley face examples: :) :D ;-D :~)
+// Invalid smiley faces:  ;( :> :} :]
+
+function countSmileys(arr) {
+  var counter = 0;
+  for (i = 0; i < arr.length; i++) {
+    if (arr[i].length === 2 && (arr[i].includes(':') || arr[i].includes(';')) && (arr[i].includes(')') || arr[i].includes('D')) ) {
+      counter += 1
+    } else if (arr[i].length === 3 && (arr[i].includes(':') || arr[i].includes(';')) && (arr[i].includes(')') || arr[i].includes('D')) &&(arr[i].includes('-') || arr[i].includes('~')) ) {
+      counter += 1
+    }
+  }
+  return counter
+}
