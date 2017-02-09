@@ -12,3 +12,15 @@ function countDevelopers(list) {
   })
   return peeps.length
 }
+
+
+// ****************** #2 Greet Developers - 7kyu **********
+// Add greeting property for each object that says 'Hi Sofia, what do you like the most about Java?'
+
+function greetDevelopers(list) {
+  var addGreeting = function(peep) {
+    return (peep.greeting = 'Hi ' + peep.firstName + ', what do you like the most about ' + peep.language + '?')
+  }
+  var greeted = list.filter(addGreeting);
+  return greeted
+}
