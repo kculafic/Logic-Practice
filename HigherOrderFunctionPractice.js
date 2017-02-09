@@ -24,3 +24,28 @@ function greetDevelopers(list) {
   var greeted = list.filter(addGreeting);
   return greeted
 }
+
+//  ***************** #3 Is Ruby Coming - 7kyu *************
+
+function isRubyComing(list) {
+  var ruby = list.filter(function(check) {
+      return check.language === 'Ruby'
+  })
+    if (ruby.length > 0) {
+      return true
+    } else {
+      return false
+    }
+}
+
+// ******************* #4 find the First Python Dev **********
+function getFirstPython(list) {
+  var python = list.filter(function(i) {
+    return i.language === 'Python'
+  })
+  if (python[0] !== undefined) {
+    return python[0].firstName + ', ' + python[0].country
+  } else {
+    return 'There will be no Python developers'
+  }
+}
