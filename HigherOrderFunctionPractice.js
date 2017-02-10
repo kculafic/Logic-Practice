@@ -66,3 +66,34 @@ function findSenior(list) {
     }
   })
 }
+
+// ****************** #8 are All continents represented? * *****
+function allContinents(list) {
+ var obj = {
+   Africa: false,
+   Americas: false,
+   Asia: false,
+   Europe: false,
+   Oceania: false
+ }
+  var loop = list.forEach(function(x, index) {
+    if (x.continent === 'Africa' ) {
+      obj.Africa = true
+    } else if ( x.continent === 'Americas') {
+      obj.Americas = true
+    } else if ( x.continent === 'Asia') {
+      obj.Asia = true
+    } else if ( x.continent === 'Europe') {
+      obj.Europe = true
+    } else if ( x.continent === 'Oceania') {
+      obj.Oceania = true
+    }
+  })
+  var check = Object.keys(obj).map(function(key) {
+    return obj[key];
+});
+  var thing = check.reduce((accum, e, i) => {
+    return e && accum ? true : false
+  }, true);
+   return thing
+}
