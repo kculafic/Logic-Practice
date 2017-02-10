@@ -52,18 +52,17 @@ function getFirstPython(list) {
 
 // ********************** #7 Find the Senior dev ************
 function findSenior(list) {
-  var maxAge = 0;
-  var placeholder = [];
+  var maxAge = 0
 
-  var filtered = list.filter(function(x) {
-    if (x.age >= maxAge) {
-      maxAge = x.age
-    } return x.firstName
-  })
-  for (i=0; i < filtered.length; i++) {
-    if (filtered[i].age === maxAge) {
-      placeholder.push(filtered[i])
+  list.forEach(function(obj, index){
+    if (obj.age > maxAge) {
+      maxAge = obj.age
     }
-  }
-  return placeholder
+  })
+
+  return list.filter(function(x){
+    if (x.age >= maxAge) {
+      return x
+    }
+  })
 }
