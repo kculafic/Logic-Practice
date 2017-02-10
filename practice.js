@@ -368,3 +368,20 @@ function countSmileys(arr) {
   }
   return counter
 }
+
+
+//  ************** Flatten Array - 7kyu ********
+function flatten (matrix) {
+  return matrix.reduce((acc, el, i) => {
+    return acc.concat( el )
+  }, [])
+}
+// if index input is an array, it will insert the entire array into the new index.
+// ....to flatten EVERY element of an array / sub array, you need to implement
+// recursion:
+function flatten (matrix) {
+  return matrix.reduce((acc, el, i) => {
+    return acc.concat(Array.isArray(el) ? flatten(el) : el )
+  }, [])
+}
+ 
