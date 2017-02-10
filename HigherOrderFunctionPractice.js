@@ -49,3 +49,21 @@ function getFirstPython(list) {
     return 'There will be no Python developers'
   }
 }
+
+// ********************** #7 Find the Senior dev ************
+function findSenior(list) {
+  var maxAge = 0;
+  var placeholder = [];
+
+  var filtered = list.filter(function(x) {
+    if (x.age >= maxAge) {
+      maxAge = x.age
+    } return x.firstName
+  })
+  for (i=0; i < filtered.length; i++) {
+    if (filtered[i].age === maxAge) {
+      placeholder.push(filtered[i])
+    }
+  }
+  return placeholder
+}
