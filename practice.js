@@ -35,6 +35,17 @@ function addBinary(a,b) {
     return '10'
   }
 }
+// Positive Sum
+
+function positiveSum(arr) {
+  var sum = 0;
+  for (var i = 0; i <= arr.length; i++) {
+    if (arr[i] >= 0) {
+      sum = sum + arr[i];
+    }
+  }
+  return sum;
+}
 
 
 // *************** IQ Test ********************
@@ -384,4 +395,3 @@ function flatten (matrix) {
     return acc.concat(Array.isArray(el) ? flatten(el) : el )
   }, [])
 }
- 
