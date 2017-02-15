@@ -97,3 +97,12 @@ function allContinents(list) {
   }, true);
    return thing
 }
+
+// ********* alt solution to the above ****
+function allContinents(list) {
+  let res = [];
+  for (let person of list) {
+    if (res.indexOf(person.continent) === -1) res.push(person.continent);
+  }
+  return res.length === 5;
+}
