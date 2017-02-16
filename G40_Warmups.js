@@ -21,3 +21,22 @@ function map(arr, fn){
 
   return newArr;
 }
+
+//  Rewrite .filter() that takes two arguments. arr (array) callback (function)
+//
+// For example:
+//
+// function returnEven(e) => {
+//   return e % 2 === 0;
+// }
+// filter([1, 2, 3, 4], returnEven) --> will return [2, 4]
+
+const filter = (arr, fn) => {
+  var newArr = [],
+  for (var i = 0; i < arr.length; i++) {
+    if (fn(arr[i])) {
+      newArr.push(arr[i])
+    }
+  }
+  return newArr
+}
