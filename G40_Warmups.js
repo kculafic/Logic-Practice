@@ -164,3 +164,29 @@ function factorial(a){
     return (a * factorial(a - 1));
   }
 }
+
+// Task:
+//   Write a function named `fizzbuzz` that returns an array with the integers from 1 to 100 (inclusive).
+//
+// But:
+//
+//   for multiples of three, insert 'Fizz' (instead of the number) into the array.
+//   for multiples of five, insert 'Buzz' (instead of the number) into the array.
+//   for multiples of both three and five, insert 'FizzBuzz' (instead of the number) into the array.
+//
+
+function fizzbuzz(x){
+  var newArr = [];
+  for (i=0; i < x; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      newArr.push('FizzBuzz')
+    } else if (i % 3 === 0) {
+      newArr.push('Fizz')
+    } else if (i % 5 === 0) {
+      newArr.push('Buzz')
+    } else {
+      newArr.push(i)
+    }
+  }
+  return newArr
+}
