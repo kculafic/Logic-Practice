@@ -250,3 +250,35 @@ function alphabetPosition(text) {
   }
   return nums.join(' ')
 }
+
+
+// Write a function that takes a string as input and reverse only the vowels of a string.
+
+// Example 1:
+// Given s = "hello", return "holle".
+
+// Example 2:
+// Given s = "wookiE", return "wEikoo".
+
+function reverseVowels(s) {
+  var vowelArr = [];
+  var strArr = s.split('');
+  var newArr = [];
+  var alphaRef = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+  for (i = 0; i < strArr.length; i++) {
+    if (alphaRef.indexOf(strArr[i]) !== -1) {
+      vowelArr.push(strArr[i])
+    }
+  }
+  vowelArr.reverse()
+  let y = 0;
+  for(j = 0; j < strArr.length; j++) {
+    if (alphaRef.indexOf(strArr[j]) !== -1) {
+      newArr.push(vowelArr[y])
+      y++
+    } else {
+      newArr.push(strArr[j])
+    }
+  }
+  return newArr.join('')
+}
