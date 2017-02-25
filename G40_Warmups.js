@@ -296,3 +296,30 @@ function rotate(arr,k) {
   }
   return arr
 }
+
+
+// Create a function to name your start up!!
+// This function takes a string,
+// and it returns that string with no vowels,
+// and all spaces replaced with an underscore,
+// and no Upper Case letters
+//
+// nmr("Industry Disruptor") => "ndstry_dsrptr"
+
+function namer(name){
+  var newName = name.toLowerCase();
+  var vowels = ['a', 'e', 'i', 'o', 'u'];
+  var newArr = [];
+  var finalArr = [];
+  for (i=0; i < newName.length; i++) {
+    if (vowels.indexOf(newName[i]) === -1) {
+      newArr.push(newName[i])
+    }
+  }
+  for (j = 0; j < newArr.length; j++) {
+    if (newArr[j] === ' ') {
+      newArr[j] = '_';
+    }
+  }
+  return newArr.join('')
+}
