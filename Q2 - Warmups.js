@@ -18,3 +18,31 @@ const filter = function(array, fn) {
 }
 
 module.exports = filter;
+
+
+//  **************************** #2 **************************
+// array every
+// create a function named `every` that takes an array and a function
+// it should return true if and only if the passed function returns true
+// for ALL of the elements in the array
+//
+// To test:
+// npm test 03-array-every/test.js
+
+const every = function(array, fn){
+  const newArr = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (fn(array[i]) === true ) {
+      newArr.push('true')
+    } else if (fn(array[i]) === false ) {
+      newArr.push('false')
+    }
+  }
+
+  if (newArr.includes('false') === true) {
+    return false
+  } else if (newArr.indexOf('false') === -1){
+    return true
+  }
+}
