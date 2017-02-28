@@ -46,3 +46,31 @@ const every = function(array, fn){
     return true
   }
 }
+
+// ************************* #3 **************************
+// array some
+//
+// create a function named `some` that takes an array and a function.
+// it should return true if any of the array elements returns true when
+// passed as an argument to the function. It should return false, if and only if
+// all the elements return false when passed as arguments to the function.
+//
+// To test:
+// npm test 04-array-some/test.js
+
+const some = function(array, fn){
+  const newArr = [];
+
+  for (let i = 0; i < array.length; i++) {
+    if (fn(array[i]) === true ) {
+      newArr.push('true')
+    } else if (fn(array[i]) === false ) {
+      newArr.push('false')
+    }
+  }
+
+  if (newArr.includes('true') === true) {
+    return true
+  } else if (newArr.indexOf('true') === -1){
+    return false
+  }
