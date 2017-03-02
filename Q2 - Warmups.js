@@ -124,7 +124,7 @@ const tempGauge = function(towns){
 }
 
 // ***************** # 8 ************
-
+ 
 // Require `data.js`, this module includes an array with the necessary information to process
 //
 // Create a function named `percentageUnder` that takes no parameters
