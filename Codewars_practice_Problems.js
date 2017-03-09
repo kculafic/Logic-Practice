@@ -395,3 +395,17 @@ function flatten (matrix) {
     return acc.concat(Array.isArray(el) ? flatten(el) : el )
   }, [])
 }
+
+// **************  
+function mostUsedChar(str) {
+  var thing = str.split(' ').join('');
+  var ref = {};
+  for (var i = 0; i < thing.length; i++) {
+    if (ref.hasOwnProperty(thing[i]) === false) {
+       ref[thing[i]] = 1;
+    } else {
+    ref[thing[i]] += 1;
+    }
+  }
+  console.log(ref);
+ }
