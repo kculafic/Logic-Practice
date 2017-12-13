@@ -72,24 +72,21 @@ function reverseInt(n) {
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-  let ref = {};
-  for (let value of str) {
-    if (ref[value] >= 1) {
-      ref[value] += 1;
-    } else {
-      ref[value] = 1;
-    }
+  const charMap = {};
+  let max = 0;
+  let maxChar = '';
+
+  for (let char of str) {
+    charMap[char] = charMap[char] + 1 || 1;
   }
 
-  let highestValue = 0;
-  let key;
-  for (let thing in ref) {
-    if (ref[thing] >= highestValue) {
-      highestValue = ref[thing];
-      key = thing;
+  for (let char in charMap) {
+    if (charMap[char] > max) {
+      max = charMap[char];
+      maxChar = char;
     }
   }
-  return key;
+  return maxChar;
 }
 
 
