@@ -63,6 +63,34 @@ function reverseInt(n) {
   return sign * parseInt(x)
 }
 
+//  ************************* 4 ******************************
+// --- Directions
+// Given a string, return the character that is most
+// commonly used in the string.
+// --- Examples
+// maxChar("abcccccccd") === "c"
+// maxChar("apple 1231111") === "1"
+
+function maxChar(str) {
+  let ref = {};
+  for (let value of str) {
+    if (ref[value] >= 1) {
+      ref[value] += 1;
+    } else {
+      ref[value] = 1;
+    }
+  }
+
+  let highestValue = 0;
+  let key;
+  for (let thing in ref) {
+    if (ref[thing] >= highestValue) {
+      highestValue = ref[thing];
+      key = thing;
+    }
+  }
+  return key;
+}
 
 
 
