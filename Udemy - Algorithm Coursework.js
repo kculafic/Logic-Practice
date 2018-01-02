@@ -173,8 +173,17 @@ function anagrams(stringA, stringB) {
 
 function buildCharMap(str) {
   const charMap= {};
-  for (let char of str.replace(/[\^w]/g, '').toLowerCase()) {
+  for (let char of str.replace(/[^\w]/g, '').toLowerCase()) {
     charMap[char] = charMap[char] + 1 || 1;
   }
   return charMap;
+}
+
+// ****** #7 Refactored solution 
+function anagrams(stringA, stringB) {
+  return cleanUp(stringA) === cleanUp(stringB);
+}
+
+function cleanUp(str) {
+  return str.toLowerCase().replace(/[^\w]/g, '').split('').sort().join('');
 }
