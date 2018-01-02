@@ -1,4 +1,4 @@
-// Write a function named map that takes two arguments. arr (array) callback (function)
+ // Write a function named map that takes two arguments. arr (array) callback (function)
 //
 // Return a new array where each element of arr is transformed by the callback function and the result is pushed into the new array.
 //
