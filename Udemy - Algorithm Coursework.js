@@ -205,3 +205,18 @@ function capitalize(str) {
   }
   return final.join(' ');
 }
+
+// ****** 8 Alternate solution
+function capitalize(str) {
+  const result = [];
+  result.push(str[0].toUpperCase());
+
+  for (let i=1; i<str.length; i++) {
+    if (str[i-1] === ' ') {
+      result.push(str[i].toUpperCase())
+    } else {
+      result.push(str[i])
+    }
+  }
+  return result.join('')
+}
