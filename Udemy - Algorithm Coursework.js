@@ -326,3 +326,22 @@ function pyramid(n) {
     console.log(prevRow.join(''));
   }
 }
+
+// Alternate / Refactored solution
+function pyramid(n) {
+  let frame = (2*n - 1);
+  let medianIndex = n-1 ;
+
+  for (let row = 0; row < n; row++) {
+    let level = '';
+
+    for(let column = 0; column < frame; column++){
+      if (medianIndex - row <= column && medianIndex + row >= column) {
+        level += '#';
+      } else {
+        level += ' ';
+      }
+    }
+    console.log(level); 
+  }
+}
