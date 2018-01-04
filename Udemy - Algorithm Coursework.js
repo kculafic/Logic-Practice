@@ -342,6 +342,32 @@ function pyramid(n) {
         level += ' ';
       }
     }
-    console.log(level); 
+    console.log(level);
   }
 }
+
+// Refactored with Recursion
+function pyramid(n, row = 0, level = '') {
+  let frame = (2*n - 1);
+  let medianIndex = n-1 ;
+
+  if (row === n){
+    return;
+  }
+
+  if (row < n) {
+    for (let column = 0; column < frame; column++) {
+      if (medianIndex - row <= column && medianIndex + row >= column) {
+        level += '#';
+      } else {
+        level += ' ';
+      }
+    }
+  }
+
+  if (frame === level.length) {
+    console.log(level);
+    return pyramid(n, row + 1);
+  }
+}
+  
