@@ -285,6 +285,44 @@ function steps(n, row = 0, stair='') {
   } else {
     stair += ' ';
   }
-  
+
   steps(n, row, stair);
+}
+
+// ********************* 10 **************************
+// Write a function that accepts a positive number N.
+// The function should console log a pyramid shape
+// with N levels using the # character.  Make sure the
+// pyramid has spaces on both the left *and* right hand sides
+// --- Examples
+//   pyramid(1)
+//       '#'
+//   pyramid(2)
+//       ' # '
+//       '###'
+//   pyramid(3)
+//       '  #  '
+//       ' ### '
+//       '#####'
+
+function pyramid(n) {
+  let frame = (2*n - 1);
+  let medianIndex = n-1 ;
+
+  const rowHolder = [ ];
+  for (let row = 0; row < n; row++) {
+    let prevRow = rowHolder;
+    for (let column = 0; column < frame; column++) {
+      if (row === 0) {
+        prevRow[medianIndex] = '#';
+        prevRow[column] = ' ';
+      } else if (row < medianIndex) {
+        prevRow[medianIndex + row] = '#';
+        prevRow[medianIndex - row] = '#';
+      } else if (row === medianIndex) {
+        prevRow[column] = '#';
+      }
+    }
+    console.log(prevRow.join(''));
+  }
 }
