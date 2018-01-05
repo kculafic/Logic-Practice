@@ -385,11 +385,18 @@ function pyramid(n, row = 0, level = '') {
 function vowels(str) {
   let counter = 0;
   let newStr = str.toLowerCase();
+  let vowelRef = ['a', 'e', 'i', 'o', 'u'];
 
-  for (i=0; i<newStr.length; i++) {
-    if (newStr[i] === 'a' || newStr[i] === 'e' || newStr[i] === 'i' || newStr[i] === 'o' || newStr[i] === 'u') {
+  for (let char of newStr) {
+    if (vowelRef.includes(char)) {
       counter ++;
     }
   }
  return counter;
+}
+
+// refactor with RegEx
+function vowels(str) {
+  const matchs = str.match(/[aeiuo]/gi);
+  return matches ? matches.length : 0;
 }
