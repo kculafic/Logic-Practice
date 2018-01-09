@@ -479,17 +479,13 @@ function matrix(n) {
 //   fib(4) === 3
 
 function fib(n) {
-  let arr = [];
+  let arr = [0, 1];
   for (let i=0; i <= n; i++) {
-    if (i === 0) {
-      arr.push(0);
-    } else if (i === 1) {
-      arr.push(1);
-    } else if (i >= 2) {
+    if (i >= 2) {
       let first = arr[i-2];
       let second = arr[i-1];
       arr.push(first+second);
     }
   }
-  return arr[n];
+  return arr[n]; 
 }
