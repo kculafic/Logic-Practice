@@ -480,12 +480,8 @@ function matrix(n) {
 
 function fib(n) {
   let arr = [0, 1];
-  for (let i=0; i <= n; i++) {
-    if (i >= 2) {
-      let first = arr[i-2];
-      let second = arr[i-1];
-      arr.push(first+second);
-    }
+  for (let i=2; i <= n; i++) {
+    arr.push(arr[i-2]+arr[i-1]);
   }
   return arr[n]; 
 }
