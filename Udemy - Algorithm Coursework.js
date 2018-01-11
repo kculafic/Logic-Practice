@@ -486,7 +486,7 @@ function fib(n) {
   return arr[n];
 }
 
-// Alternate Recursive Solition 
+// Alternate Recursive Solution
 function fib(n) {
  if (n < 2) {
    return n;
@@ -494,3 +494,29 @@ function fib(n) {
    return fib(n-1) + fib(n-2);
  }
 }
+
+// Add memoization to recursive solution
+function memoize(fn) {
+  const cache = {};
+  return function(...args) {
+    if (cache[args]) {
+     return cache[args];
+    }
+    const result = fn.apply(this, args);
+    cache[args] = result;
+    return result;
+  }
+}
+
+function slowFib(n) {
+ if (n < 2) {
+   return n;
+ } else {
+   return fib(n-1) + fib(n-2);
+ }
+}
+
+const fib = memoize(slowFib);
+
+fib(n);
+// ex: to call fib(9) --> 34 
