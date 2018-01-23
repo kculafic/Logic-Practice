@@ -237,4 +237,24 @@ class Queue {
     }
     return null;
   }
+
+  removeAt(index) {
+    let counted = this.size();
+    let node = this.head;
+
+    if (!node) {
+      return null
+    }
+
+    if (index === 0) {
+      this.head = this.head.next;
+      return node;
+    }
+
+    const previous = this.getAt(index - 1);
+    if (!previous || !previous.next) {
+      return;
+    }
+    previous.next = previous.next.next;
+  }
 }
