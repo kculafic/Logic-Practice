@@ -257,4 +257,20 @@ class Queue {
     }
     previous.next = previous.next.next;
   }
+
+  insertAt(data, index) {
+    if (!this.head) {
+      index = 0;
+      this.head = new Node(data);
+    }
+
+    if (index === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    }
+
+    const previous = this.getAt(index - 1) || this.getLast();
+    const node = new Node(data, previous.next);
+    previous.next = node;
+  }
 }
