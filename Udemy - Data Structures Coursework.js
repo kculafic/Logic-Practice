@@ -151,6 +151,50 @@ class Queue {
     this.first = new Stack();
     this.second = new Stack();
   }
+  add(input) {
+    this.first.push(input);
+  }
+
+  remove() {
+    while (this.first.peek()) {
+      // const record = this.first.pop();
+      this.second.push(this.first.pop());
+    }
+    const record = this.second.pop();
+    while (this.second.peek()) {
+      this.first.push(this.second.pop());
+    }
+    return record;
+  }
+
+  peek() {
+    while (this.first.peek()) {
+      this.second.push(this.first.pop());
+    }
+    const record = this.second.peek();
+    while (this.second.peek()) {
+      this.first.push(this.second.pop());
+    }
+    return record;
+  }
+}
+
+// *************** Build a LinkedList constructor with variety of methods ****************
+// --- Directions
+// Implement classes Node and Linked Lists
+// See 'directions' document
+
+class Node {
+  constructor(data, next = null) {
+    this.data = data;
+    this.next = next;
+  }
+}
+
+class LinkedList {
+  constructor() {
+    this.head = null;
+  }
 
   insertFirst(data) {
     this.head = new Node(data, this.head);
@@ -256,21 +300,5 @@ class Queue {
       return;
     }
     previous.next = previous.next.next;
-  }
-
-  insertAt(data, index) {
-    if (!this.head) {
-      index = 0;
-      this.head = new Node(data);
-    }
-
-    if (index === 0) {
-      this.head = new Node(data, this.head);
-      return;
-    }
-
-    const previous = this.getAt(index - 1) || this.getLast();
-    const node = new Node(data, previous.next);
-    previous.next = node;
   }
 }
