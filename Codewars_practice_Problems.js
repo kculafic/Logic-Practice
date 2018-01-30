@@ -396,7 +396,7 @@ function flatten (matrix) {
   }, [])
 }
 
-// **************  
+// **************
 function mostUsedChar(str) {
   var thing = str.split(' ').join('');
   var ref = {};
@@ -409,3 +409,31 @@ function mostUsedChar(str) {
   }
   console.log(ref);
  }
+
+
+// ******************************* Sum of all multiples of 3 or 5 less than 1000 *******
+ function threesAndFives(input){
+  let threeArr = [];
+  let fiveArr = [];
+  let repeatsArr = [];
+
+  for(i=0; i < input; i++) {
+    if (i % 3 === 0) {
+      threeArr.push(i);
+    }
+    if (i % 5 === 0) {
+      fiveArr.push(i);
+    }
+    if (i % 15 === 0) {
+      repeatsArr.push(i);
+    }
+  }
+
+  let sumThrees = threeArr.reduce((total, int) => total + int);
+  let sumFives = fiveArr.reduce((total, int) => total + int);
+  let sumRepeats = repeatsArr.reduce((total, int) => total + int);
+
+  return sumThrees + sumFives - sumRepeats;
+}
+
+threesAndFives(1000);
