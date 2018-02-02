@@ -524,3 +524,24 @@ function high(x){
   }
   return arr[maxIndex]
 }
+
+// ***************************** 5kyu: Break camelCase ************************
+// Complete the solution so that the function will
+// break up camel casing, using a space between words.
+//
+// solution('camelCasing') // => should return 'camel Casing'
+
+function solution(string) {
+  let arr = [];
+
+  for (i=0; i < string.length; i++) {
+    if (string[i].toLowerCase() === string[i]) {
+      arr.push(string[i]);
+    } else if (string[i].toUpperCase() === string[i]) {
+      arr.push(' ');
+      arr.push(string[i]);
+    }
+  }
+
+  return arr.join('')
+}
