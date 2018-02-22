@@ -122,9 +122,35 @@ const tempGauge = function(towns){
   }
   return newObj
 }
+//  ----------- alt solution 
+function tempGauge(obj) {
+  const refObj = {
+    hot: [],
+    warm: [],
+  }
+
+  for (let city in obj) {
+    let greaterThanNineteen = 0;
+
+    for (let i=0; i <= obj[city].length; i++) {
+      if (obj[city][i] > 19) {
+        greaterThanNineteen++
+      }
+    }
+
+    if (greaterThanNineteen === obj[city].length) {
+      refObj.hot.push(city);
+    } else if (greaterThanNineteen > 0) {
+      refObj.warm.push(city);
+    }
+
+  }
+  return refObj;
+}
+
 
 // ***************** # 8 ************
- 
+
 // Require `data.js`, this module includes an array with the necessary information to process
 //
 // Create a function named `percentageUnder` that takes no parameters
