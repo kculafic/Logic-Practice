@@ -1,5 +1,30 @@
+# ********* Calc distance between two coordinates ********
 
-# **************** Return MaxiMinimum ***********************
+def distCalc(point1, point2)
+  first = ((point2[:x] - point1[:x]) **2)
+  second = ((point2[:y] - point1[:y]) **2)
+  sum = (first + second)
+  dist = Math.sqrt(sum)
+  return dist
+end
+
+distCalc({ x: 3, y: 2 }, { x: 9, y: 7 })
+
+
+# ********* Take an Array of strings to check for another string ********
+
+def strCheck(arr, str)
+  arr.each do |i|
+    if str == i
+      return true
+    end
+  end
+  return false
+end
+
+strCheck(['something', 'else', 'something else', 'foo', 'bar'], 'foo')
+
+# **************** Return Minimum ***********************
 def findMin(arr)
   minimum = 0
   arr.each do |num|
