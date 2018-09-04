@@ -1,3 +1,38 @@
+# ********* toPairs ********
+
+def toPairs(obj)
+  newArr = Array.new
+  secondArr = Array.new
+
+  obj.each do |key, val|
+    secondArr << key
+    secondArr << val
+    newArr << secondArr
+  end
+
+  print newArr
+end
+
+toPairs({ a: 1, b: 2 })
+
+
+# ********* Inversion ********
+
+objB = Hash.new
+
+objB = {
+  "Zoran" => 61,
+  "Boris" => 60,
+  "Milos" => 62
+}
+
+def invert(o)
+  puts o
+  puts o.invert
+end
+
+invert(objB)
+
 # ********* Calc distance between two coordinates ********
 
 def distCalc(point1, point2)
