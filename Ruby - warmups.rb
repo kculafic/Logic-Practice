@@ -1,3 +1,28 @@
+# // ***************************** 5kyu: Break camelCase ************************
+# // Complete the solution so that the function will
+# // break up camel casing, using a space between words.
+# //
+# // solution('camelCasing') // => should return 'camel Casing'
+
+def breakCam(str)
+  chars = str.split('')
+  arr = Array.new
+
+  chars.each do |i|
+    if i.downcase == i
+      arr << i
+    elsif i.upcase == i
+      arr << ' '
+      arr << i
+    end
+  end
+
+  return arr.join()
+
+end
+
+breakCam('camelCasingDemo')
+
 # ********* toPairs ********
 
 def toPairs(obj)
