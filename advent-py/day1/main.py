@@ -14,8 +14,8 @@ def solve(stuff):
   print(sum)
   return sum
 
-test1 = [-1, -2, -3]
-test2 = [+1, +1, -2]
-test3 = [+1, +1, +1]
+# test1 = [-1, -2, -3]
+# test2 = [+1, +1, -2]
+# test3 = [+1, +1, +1]
 
 solve(d)
