@@ -44,6 +44,7 @@ def solve_one(string):
   elif(local_high_count == 3):
     main_counter['threes'] += 1
 
+
   # print('main_counter (inside) = ',main_counter)
 
 def solve_more(array):
